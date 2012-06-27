@@ -11,40 +11,40 @@
 abstract class Hedge_Specification_General {
 
 	/**
-	 * @var  Validate
+	 * @var  Validation
 	 */
-	protected $_validate;
+	protected $_validation;
 
 	/**
 	 * @var  string  Error messages file
 	 */
-	protected $_error_file = 'validate';
+	protected $_error_file = 'validation';
 
 	/**
-	 * Sets Validate object if provided
+	 * Sets Validation object if provided
 	 *
-	 * @param   Validate
+	 * @param   Validation
 	 * @return  void
 	 */
-	public function __construct(Validate $validate = NULL)
+	public function __construct(Validation $validation = NULL)
 	{
-		$this->_validate = $validate;
+		$this->_validation = $validation;
 	}
 
 	/**
-	 * Validate object setter/getter
+	 * Validation object setter/getter
 	 *
-	 * @param   Validate
-	 * @return  Validate
+	 * @param   Validation
+	 * @return  Validation
 	 */
-	public function validate(Validate $validate = NULL)
+	public function validation(Validation $validation = NULL)
 	{
-		if ($validate !== NULL)
+		if ($validation !== NULL)
 		{
-			$this->_validate = $validate;
+			$this->_validation = $validation;
 		}
 
-		return $this->_validate;
+		return $this->_validation;
 	}
 
 	/**
@@ -54,6 +54,6 @@ abstract class Hedge_Specification_General {
 	 */
 	public function errors()
 	{
-		return $this->_validate->errors($this->_error_file);
+		return $this->_validation->errors($this->_error_file);
 	}
 }

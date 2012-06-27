@@ -19,13 +19,13 @@ class Hedge_Specification_GeneralTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function test_it_sets_and_gets_validation()
 	{
-		$validate = new Validate(array());
+		$validation = new Validation(array());
 
-		$spec_foo = new Specification_General($validate);
-		$spec_bar = new Specification_General($validate);
+		$spec_foo = new Specification_General($validation);
+		$spec_bar = new Specification_General($validation);
 
-		$this->assertSame($validate, $spec_foo->validate());
-		$this->assertSame($validate, $spec_bar->validate());
+		$this->assertSame($validation, $spec_foo->validation());
+		$this->assertSame($validation, $spec_bar->validation());
 	}
 
 	/**
@@ -33,16 +33,16 @@ class Hedge_Specification_GeneralTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function test_it_returns_validation_errors()
 	{
-		$validate = $this->getMockBuilder('Validate')
+		$validation = $this->getMockBuilder('Validation')
 			->setMethods(array('errors'))
 			->setConstructorArgs(array(array()))
 			->getMock();
 
-		$validate
+		$validation
 			->expects($this->once())
 			->method('errors');
 
-		$spec = new Specification_General($validate);
+		$spec = new Specification_General($validation);
 
 		$spec->errors();
 	}
