@@ -8,7 +8,7 @@
  * @copyright  (c) 2012, Miodrag Tokić
  * @license    MIT
  */
-abstract class Specification_General {
+abstract class Hedge_Specification_General {
 
 	/**
 	 * @var  Validation
