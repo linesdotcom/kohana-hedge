@@ -8,43 +8,43 @@
  * @copyright  (c) 2012, Miodrag Tokić
  * @license    MIT
  */
-abstract class Specification_General {
+abstract class Hedge_Specification_General {
 
 	/**
-	 * @var  Validation
+	 * @var  Validate
 	 */
-	protected $_validation;
+	protected $_validate;
 
 	/**
 	 * @var  string  Error messages file
 	 */
-	protected $_error_file = 'validation';
+	protected $_error_file = 'validate';
 
 	/**
-	 * Sets Validation object if provided
+	 * Sets Validate object if provided
 	 *
-	 * @param   Validation
+	 * @param   Validate
 	 * @return  void
 	 */
-	public function __construct(Validation $validation = NULL)
+	public function __construct(Validate $validate = NULL)
 	{
-		$this->_validation = $validation;
+		$this->_validate = $validate;
 	}
 
 	/**
-	 * Validation object setter/getter
+	 * Validate object setter/getter
 	 *
-	 * @param   Validation
-	 * @return  Validation
+	 * @param   Validate
+	 * @return  Validate
 	 */
-	public function validation(Validation $validation = NULL)
+	public function validate(Validate $validate = NULL)
 	{
-		if ($validation !== NULL)
+		if ($validate !== NULL)
 		{
-			$this->_validation = $validation;
+			$this->_validate = $validate;
 		}
 
-		return $this->_validation;
+		return $this->_validate;
 	}
 
 	/**
@@ -54,6 +54,6 @@ abstract class Specification_General {
 	 */
 	public function errors()
 	{
-		return $this->_validation->errors($this->_error_file);
+		return $this->_validate->errors($this->_error_file);
 	}
 }
